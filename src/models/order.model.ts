@@ -1,7 +1,10 @@
 export class OrderModel {
 
   id?: string;
-  date: string;
+  date: {
+    nanoseconds: number,
+    seconds: number
+  };
   phone?: string;
   firstName?: string;
   lastName?: string;

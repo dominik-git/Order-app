@@ -15,9 +15,15 @@ export class OrderResourceServiceService {
     const ordersCollection = this.firestore.collection('orders');
     const newOrder = new OrderModel();
     newOrder.type = type;
-    const date = new Date();
-    const formatedDate = this.datepipe.transform(date, 'dd-mm-yyyy');
-    newOrder.date = formatedDate;
+    // const date = new Date();
+    const seconds = Math.floor(Date.now() / 1000);
+
+    const timestamp = {
+      nanoseconds: 0,
+      seconds
+    };
+    // const formatedDate = this.datepipe.transform(date, 'dd-mm-yyyy');
+    newOrder.date = timestamp;
 
     ordersCollection.doc().set({...newOrder})
       .then(() => {
