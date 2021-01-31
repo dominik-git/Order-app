@@ -5,6 +5,9 @@ export class OrderModel {
     nanoseconds: number,
     seconds: number
   };
+ assumedLeaveDate: {    nanoseconds: number,
+    seconds: number
+  };
   phone?: string;
   firstName?: string;
   lastName?: string;

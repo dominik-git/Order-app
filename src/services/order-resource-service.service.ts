@@ -22,8 +22,8 @@ export class OrderResourceServiceService {
       nanoseconds: 0,
       seconds
     };
-    // const formatedDate = this.datepipe.transform(date, 'dd-mm-yyyy');
     newOrder.date = timestamp;
+
 
     ordersCollection.doc().set({...newOrder})
       .then(() => {
